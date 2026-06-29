@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "about": "О нас",
+    "principles": "Принципы",
+    "earlyAccess": "Ранний доступ",
+    "contact": "Контакт"
+  },
+  "brand": {
+    "name": "SPHEREX",
+    "parent": "Часть VELQX — VELQX Inc"
+  }
+}

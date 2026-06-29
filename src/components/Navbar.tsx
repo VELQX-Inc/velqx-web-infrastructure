@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router'
 import { Menu, X } from 'lucide-react'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -36,39 +37,41 @@ export default function Navbar() {
     >
       <div className="w-full section-padding flex items-center justify-between">
         {/* Logo */}
-        <Link
-          to="/"
-          className="font-['Playfair_Display'] text-xl md:text-2xl font-bold tracking-tight text-white hover:text-[#00d4ff] transition-colors duration-300"
-        >
-          SPHEREX
+        <Link to="/" className="flex items-center gap-3">
+          <img src="/logo.png" alt="VELQX logo" className="w-[var(--logo-size)] h-auto object-contain" />
+          <span className="font-['Playfair_Display'] text-xl md:text-2xl font-bold tracking-tight text-white hover:text-[#00d4ff] transition-colors duration-300">
+            SPHEREX
+          </span>
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={`text-xs uppercase tracking-[0.15em] font-['Inter'] transition-all duration-300 relative group ${
-                location.pathname === link.path
-                  ? 'text-[#00d4ff]'
-                  : 'text-[#94a3b8] hover:text-white'
-              }`}
-            >
-              {link.label}
-              <span
-                className={`absolute -bottom-1 left-0 h-px bg-[#00d4ff] transition-all duration-300 ${
+        <div className="hidden md:flex items-center gap-6">
+          <div className="flex items-center gap-8">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={`text-xs uppercase tracking-[0.15em] font-['Inter'] transition-all duration-300 relative group ${
                   location.pathname === link.path
-                    ? 'w-full'
-                    : 'w-0 group-hover:w-full'
+                    ? 'text-[#00d4ff]'
+                    : 'text-[#94a3b8] hover:text-white'
                 }`}
-              />
-            </Link>
-          ))}
-          <Link
-            to="/join"
-            className="btn-primary text-xs py-2.5 px-5"
-          >
+              >
+                {link.label}
+                <span
+                  className={`absolute -bottom-1 left-0 h-px bg-[#00d4ff] transition-all duration-300 ${
+                    location.pathname === link.path
+                      ? 'w-full'
+                      : 'w-0 group-hover:w-full'
+                  }`}
+                />
+              </Link>
+            ))}
+          </div>
+
+          <LanguageSwitcher />
+
+          <Link to="/join" className="btn-primary text-xs py-2.5 px-5">
             Join Early Access
           </Link>
         </div>
@@ -103,9 +106,13 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
-          <Link to="/join" className="btn-primary text-xs py-3 text-center mt-2">
-            Join Early Access
-          </Link>
+
+          <div className="flex items-center justify-between mt-2">
+            <LanguageSwitcher />
+            <Link to="/join" className="btn-primary text-xs py-3 text-center mt-2">
+              Join Early Access
+            </Link>
+          </div>
         </div>
       </div>
     </nav>

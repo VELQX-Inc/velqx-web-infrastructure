@@ -16,6 +16,8 @@
     --gradient-cyan: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
     --gradient-text: linear-gradient(135deg, #ffffff 0%, #00d4ff 50%, #0099cc 100%);
 
+    --logo-size: 40px;
+
     --background: 240 33% 4%;
     --foreground: 0 0% 100%;
     --card: 222 47% 11%;
@@ -45,7 +47,7 @@
   body {
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', 'Tajawal', system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -129,21 +131,18 @@
   }
 
   .section-padding {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-inline: 1.5rem;
   }
 
   @media (min-width: 768px) {
     .section-padding {
-      padding-left: 3rem;
-      padding-right: 3rem;
+      padding-inline: 3rem;
     }
   }
 
   @media (min-width: 1280px) {
     .section-padding {
-      padding-left: 6rem;
-      padding-right: 6rem;
+      padding-inline: 6rem;
     }
   }
 
