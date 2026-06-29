@@ -1,4 +1,5 @@
 import { Link } from 'react-router'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Footer() {
   return (
@@ -7,14 +8,18 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           {/* Brand */}
           <div className="md:col-span-1">
-            <Link
-              to="/"
-              className="font-['Playfair_Display'] text-2xl font-bold text-white hover:text-[#00d4ff] transition-colors duration-300"
-            >
-              SPHEREX
+            <Link to="/" className="flex items-center gap-3">
+              <img src="/logo.png" alt="VELQX logo" className="w-[var(--logo-size)] h-auto object-contain" />
+              <span className="font-['Playfair_Display'] text-2xl font-bold text-white hover:text-[#00d4ff] transition-colors duration-300">
+                SPHEREX
+              </span>
             </Link>
             <p className="mt-4 text-sm text-[#64748b] leading-relaxed">
               The digital layer for verified human existence. Built for the sovereign individual.
+            </p>
+
+            <p className="mt-6 text-xs text-[#94a3b8]">
+              Part of <strong className="text-white">VELQX</strong> — VELQX Inc
             </p>
           </div>
 
