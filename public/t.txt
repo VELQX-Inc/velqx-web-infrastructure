@@ -1,0 +1,7 @@
+This file (t.txt) was removed and placeholder content added by the repository maintainer per request.
+
+The visual logo used by the site is located at:
+- public/logo.svg (placeholder)
+- public/ChatGPT Image Jun 29, 2026, 05_51_26 AM.png
+
+If you want the file fully deleted from git history, perform a branch cleanup or remove it in a separate commit/pull that deletes the file.
